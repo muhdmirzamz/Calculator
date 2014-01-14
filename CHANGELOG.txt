@@ -2,3 +2,7 @@ CHANGELOG
 
 Jan 14 update #1
 * Main menu set up
+
+Jan 14 update #2
+* Validation class implemented
+* int validation implemented
