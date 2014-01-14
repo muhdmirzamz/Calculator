@@ -1,0 +1,4 @@
+CHANGELOG
+
+Jan 14 update #1
+* Main menu set up
