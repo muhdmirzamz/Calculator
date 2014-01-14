@@ -26,14 +26,46 @@ void MainMenu::showOptionsScreen() {
 	cout << "3 - MULTIPLY" << endl;
 	cout << "4 - DIVISION" << endl;
 	
-	cout << "Choose a number: " << endl;
-	
-	int number;
+	cout << "Choose a number: ";
 	
 	cin >> number;
 	
 	Validation validationObject;
-	if (validationObject.isCorrectNumber(number) == false) {
-		showOptionsScreen();
+	switch (number) {
+		case ADD:
+			add();
+			break;
+			
+		case SUBTRACT:
+			subtract();
+			break;
+			
+		case MULTIPLY:
+			multiply();
+			break;
+		
+		case DIVISION:
+			divide();
+			break;
+			
+		default:
+			validationObject.validationError();
+			break;
 	}
+}
+
+void MainMenu::add() {
+	
+}
+
+void MainMenu::subtract() {
+	
+}
+
+void MainMenu::multiply() {
+	
+}
+
+void MainMenu::divide() {
+	
 }

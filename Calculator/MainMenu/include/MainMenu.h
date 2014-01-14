@@ -19,7 +19,12 @@ class MainMenu {
 		MainMenu();
 		
 		void showOptionsScreen();
-	
+		
+		void add();
+		void subtract();
+		void multiply();
+		void divide();
+		
 	private:
 		enum MathsOperations {
 			ADD,
@@ -27,8 +32,20 @@ class MainMenu {
 			MULTIPLY,
 			DIVISION
 		};
+	
+		int number;
 		
-		char *array[7];
+		double addFirstDouble;
+		double addSecondDouble;
+		
+		double subtractFirstDouble;
+		double subtractSecondDouble;
+		
+		double multiplyFirstDouble;
+		double multiplySecondDouble;
+		
+		double divisionFirstDouble;
+		double divisionSecondDouble;
 };
 
 #endif /* defined(__Calculator__MainMenu__) */

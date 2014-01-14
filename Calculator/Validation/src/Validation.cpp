@@ -8,23 +8,21 @@
 //
 
 #include "Validation.h"
+#include "MainMenu.h"
 
 using namespace std;
 
 Validation::Validation() {
 }
 
-bool Validation::isCorrectNumber(int numberChoice) {
-	bool isCorrect = true;
+void Validation::validationError() {
+	cout << "Invalid input!" << endl;
 	
-	if
-	(numberChoice != 1 &&
-	 numberChoice != 2 &&
-	 numberChoice != 3 &&
-	 numberChoice != 4
-	) {
-		return false;
-	}
+	cin.clear();
+	cin.ignore(10000, '\n');
+	cout << endl;
 	
-	return isCorrect;
+	MainMenu mainMenuObject;
+	mainMenuObject.showOptionsScreen();
 }
+

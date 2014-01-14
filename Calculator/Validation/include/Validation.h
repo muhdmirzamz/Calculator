@@ -18,7 +18,7 @@ class Validation {
 	public:
 		Validation();
 		
-		bool isCorrectNumber(int numberChoice);
+		void validationError();
 	
 	private:
 };
