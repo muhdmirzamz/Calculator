@@ -6,3 +6,8 @@ Jan 14 update #1
 Jan 14 update #2
 * Validation class implemented
 * int validation implemented
+
+Jan 15 update
+* Main menu choice validation
+* Math operation function implemented
+* End of program screen implemented
