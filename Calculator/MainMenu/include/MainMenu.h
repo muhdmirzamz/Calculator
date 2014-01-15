@@ -25,27 +25,41 @@ class MainMenu {
 		void multiply();
 		void divide();
 		
+		void addEndScreen();
+		void subtractEndScreen();
+		void multiplyEndScreen();
+		void divideEndScreen();
+		
 	private:
-		enum MathsOperations {
+		enum MathOperations {
+			DEFAULT,
 			ADD,
 			SUBTRACT,
 			MULTIPLY,
-			DIVISION
+			DIVISION,
+			EXIT
 		};
 	
 		int number;
 		
+		int sum;
 		double addFirstDouble;
 		double addSecondDouble;
 		
+		int difference;
 		double subtractFirstDouble;
 		double subtractSecondDouble;
 		
+		int product;
 		double multiplyFirstDouble;
 		double multiplySecondDouble;
 		
-		double divisionFirstDouble;
-		double divisionSecondDouble;
+		int division;
+		int remainder;
+		double divideFirstDouble;
+		double divideSecondDouble;
+		int firstRemainder;
+		int secondRemainder;
 };
 
 #endif /* defined(__Calculator__MainMenu__) */

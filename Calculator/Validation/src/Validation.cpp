@@ -16,12 +16,13 @@ Validation::Validation() {
 }
 
 void Validation::validationError() {
-	cout << "Invalid input!" << endl;
+	cout << "Invalid input! Try again!" << endl;
+	cout << "---------------" << endl;
 	
 	cin.clear();
 	cin.ignore(10000, '\n');
 	cout << endl;
-	
+
 	MainMenu mainMenuObject;
 	mainMenuObject.showOptionsScreen();
 }
