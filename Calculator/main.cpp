@@ -15,8 +15,10 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-	MainMenu mainMenu;
-	mainMenu.showOptionsScreen();
+	MainMenu *mainMenu = new MainMenu();
+	mainMenu->showOptionsScreen();
+	
+	delete mainMenu;
     return 0;
 }
 

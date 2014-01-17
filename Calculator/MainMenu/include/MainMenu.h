@@ -54,12 +54,12 @@ class MainMenu {
 		double multiplyFirstDouble;
 		double multiplySecondDouble;
 		
-		int division;
-		int remainder;
+		double division;
 		double divideFirstDouble;
 		double divideSecondDouble;
-		int firstRemainder;
-		int secondRemainder;
+		int remainder;
+		int remainderFirstInt;
+		int remainderSecondInt;
 };
 
 #endif /* defined(__Calculator__MainMenu__) */

@@ -8,7 +8,6 @@
 //
 
 #include "MainMenu.h"
-#include "Validation.h"
 
 using namespace std;
 
@@ -31,8 +30,6 @@ void MainMenu::showOptionsScreen() {
 	
 	cin >> number;
 	
-	Validation validationObject;
-	
 	if (number == ADD) {
 		add();
 	} else if (number == SUBTRACT) {
@@ -41,9 +38,12 @@ void MainMenu::showOptionsScreen() {
 		multiply();
 	} else if (number == DIVISION) {
 		divide();
+	} else if (number == EXIT) {
+		cout << "Program quit!" << endl;
 	} else {
 		if (cin.fail()) {
-			validationObject.validationError();
+			cin.clear();
+			cin.ignore(10000, '\n');
 		}
 	}
 	
@@ -52,8 +52,25 @@ void MainMenu::showOptionsScreen() {
 void MainMenu::add() {
 	cout << "Enter first number: ";
 	cin >> addFirstDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+	
+		cin.clear();
+		cin.ignore(10000, '\n');
+		add();
+	}
+	
 	cout << "Enter second number: ";
 	cin >> addSecondDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		add();
+	}
 	
 	sum = addFirstDouble + addSecondDouble;
 	cout << "Sum: " << sum << endl;
@@ -65,8 +82,25 @@ void MainMenu::add() {
 void MainMenu::subtract() {
 	cout << "Enter first number: ";
 	cin >> subtractFirstDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		subtract();
+	}
+	
 	cout << "Enter second number: ";
 	cin >> subtractSecondDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		subtract();
+	}
 	
 	difference = subtractFirstDouble - subtractSecondDouble;
 	cout << "Difference: " << difference << endl;
@@ -78,8 +112,25 @@ void MainMenu::subtract() {
 void MainMenu::multiply() {
 	cout << "Enter first number: ";
 	cin >> multiplyFirstDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		multiply();
+	}
+	
 	cout << "Enter second number: ";
 	cin >> multiplySecondDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		multiply();
+	}
 	
 	product = multiplyFirstDouble * multiplySecondDouble;
 	cout << "Product: " << product << endl;
@@ -91,15 +142,40 @@ void MainMenu::multiply() {
 void MainMenu::divide() {
 	cout << "Enter first number: ";
 	cin >> divideFirstDouble;
+	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		divide();
+	}
+	
+	if (divideFirstDouble == 0) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		divide();
+	}
+	
 	cout << "Enter second number: ";
 	cin >> divideSecondDouble;
 	
-	firstRemainder = (int)divideFirstDouble;
-	secondRemainder = (int)divideSecondDouble;
-	
+	if (cin.fail()) {
+		cout << "Invalid input! Try again!" << endl;
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		divide();
+	}
+
 	division = divideFirstDouble / divideSecondDouble;
-	remainder = firstRemainder % firstRemainder;
 	cout << "Division: " << division << endl;
+	
+	remainderFirstInt = (int) divideFirstDouble;
+	remainderSecondInt = (int) divideSecondDouble;
+	remainder = remainderFirstInt % remainderSecondInt;
 	cout << "Remainder: " << remainder << endl;
 	
 	cout << endl;
