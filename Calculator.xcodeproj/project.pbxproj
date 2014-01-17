@@ -11,8 +11,6 @@
 		AA2EA6DB1884296B001D7ABD /* Calculator.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA2EA6DA1884296B001D7ABD /* Calculator.1 */; };
 		AAE4E833188450CD0063A217 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAE4E831188450CD0063A217 /* MainMenu.cpp */; };
 		AAE4E835188451130063A217 /* MainMenu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAE4E834188451130063A217 /* MainMenu.h */; };
-		AAE4E838188453240063A217 /* Validation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAE4E836188453240063A217 /* Validation.cpp */; };
-		AAE4E83A188453600063A217 /* Validation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAE4E839188453600063A217 /* Validation.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +20,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				AAE4E83A188453600063A217 /* Validation.h in CopyFiles */,
 				AAE4E835188451130063A217 /* MainMenu.h in CopyFiles */,
 				AA2EA6DB1884296B001D7ABD /* Calculator.1 in CopyFiles */,
 			);
@@ -36,8 +33,6 @@
 		AA2EA6DA1884296B001D7ABD /* Calculator.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Calculator.1; sourceTree = "<group>"; };
 		AAE4E831188450CD0063A217 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = MainMenu/src/MainMenu.cpp; sourceTree = "<group>"; };
 		AAE4E834188451130063A217 /* MainMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = Calculator/MainMenu/include/MainMenu.h; sourceTree = "<group>"; };
-		AAE4E836188453240063A217 /* Validation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Validation.cpp; path = Validation/src/Validation.cpp; sourceTree = "<group>"; };
-		AAE4E839188453600063A217 /* Validation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Validation.h; path = Calculator/Validation/include/Validation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +49,6 @@
 		AA2EA6CC1884296B001D7ABD = {
 			isa = PBXGroup;
 			children = (
-				AAE4E839188453600063A217 /* Validation.h */,
 				AAE4E834188451130063A217 /* MainMenu.h */,
 				AA2EA6D71884296B001D7ABD /* Calculator */,
 				AA2EA6D61884296B001D7ABD /* Products */,
@@ -74,7 +68,6 @@
 			children = (
 				AA2EA6D81884296B001D7ABD /* main.cpp */,
 				AAE4E831188450CD0063A217 /* MainMenu.cpp */,
-				AAE4E836188453240063A217 /* Validation.cpp */,
 				AA2EA6DA1884296B001D7ABD /* Calculator.1 */,
 			);
 			path = Calculator;
@@ -133,7 +126,6 @@
 			files = (
 				AA2EA6D91884296B001D7ABD /* main.cpp in Sources */,
 				AAE4E833188450CD0063A217 /* MainMenu.cpp in Sources */,
-				AAE4E838188453240063A217 /* Validation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +205,6 @@
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/muhdmirzamz/Documents/Code/Projects/CPPProjects/Calculator/Calculator/MainMenu;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/muhdmirzamz/Documents/Code/Projects/CPPProjects/Calculator/Calculator/Validation;
 			};
 			name = Debug;
 		};
@@ -222,7 +213,6 @@
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/muhdmirzamz/Documents/Code/Projects/CPPProjects/Calculator/Calculator/MainMenu;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/muhdmirzamz/Documents/Code/Projects/CPPProjects/Calculator/Calculator/Validation;
 			};
 			name = Release;
 		};
