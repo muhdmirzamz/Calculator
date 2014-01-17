@@ -11,3 +11,8 @@ Jan 15 update
 * Main menu choice validation
 * Math operation function implemented
 * End of program screen implemented
+
+Jan 17 update
+* Deleted validation class
+* Division by zero solved
+* Remainder bug fixed
