@@ -50,6 +50,7 @@ void MainMenu::showOptionsScreen() {
 }
 
 void MainMenu::add() {
+	cout << "Testing" << endl;
 	cout << "Enter first number: ";
 	cin >> addFirstDouble;
 	
