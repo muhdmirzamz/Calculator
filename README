@@ -1,6 +1,6 @@
 CALCULATOR
 
-A basic C++ console line calculator.
+A basic C++ console line calculator made for the mac.
 
 FEATURES
 * Add functionality
@@ -8,3 +8,15 @@ FEATURES
 * Multiplication functionality
 * Division functionality
 * Loop through
+
+HOW TO SETUP
+* This is built for the mac, so, it needs Xcode
+* Download the source code 
+* Open the whole project by double clicking the .xcodeproj file
+* On the left panel, you should see product
+* If not, just run the project first by holding Command + R
+* Click on the drop down beside the “Product” word
+* Right click and click “Show In Finder”
+* Drag the terminal app to anywhere you want it to be
+
+Enjoy! 
