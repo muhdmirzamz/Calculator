@@ -15,7 +15,7 @@ MainMenu::MainMenu() {
 }
 
 void MainMenu::showOptionsScreen() {
-	cout << "Calculator" << endl;
+	cout << "Calculator v1.0.0" << endl;
 	
 	cout << endl;
 	cout << endl;
