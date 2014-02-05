@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1391586104 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\main.cpp
+	<iostream>
+	"MainMenu.h"
+
+1391586072 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.h
+	"MathsOp.h"
+
+1391586092 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.cpp
+	<iostream>
+	"MainMenu.h"
+
+1391574700 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.h
+
+1391586592 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.cpp
+	"MathsOp.h"
+
+1391586592 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.h
+	<iostream>
+
