@@ -3,18 +3,19 @@
 	<iostream>
 	"MainMenu.h"
 
-1391586072 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.h
+1391855272 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.h
 	"MathsOp.h"
 
-1391586092 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.cpp
+1391855258 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.cpp
 	<iostream>
+	<string.h>
 	"MainMenu.h"
 
 1391574700 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mainmenu.h
 
-1391586592 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.cpp
+1391853840 source:c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.cpp
 	"MathsOp.h"
 
-1391586592 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.h
+1391855696 c:\documents and settings\user\desktop\mirza\calculator\win\calculator\mathsop.h
 	<iostream>
 

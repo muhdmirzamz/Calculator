@@ -34,6 +34,8 @@ class MathsOp
         void multiply();
         void divide();
 
+        void endScreen();
+
     private:
         // addition variables
         double addDoubleOne;
@@ -54,6 +56,18 @@ class MathsOp
         double divideDoubleOne;
         double divideDoubleTwo;
         double division;
+
+        // endScreen variables
+        enum EndScreenOptions {
+                ZERO,
+                ADD,
+                SUBTRACT,
+                MULTIPLY,
+                DIVIDE,
+                END
+        };
+
+        int endScreenChoice;
 };
 
 #endif // MATHSOP_H

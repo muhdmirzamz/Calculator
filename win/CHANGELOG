@@ -1,5 +1,11 @@
 CHANGELOG
 
+v1.0.0 8/2/14
+* Added full math classes
+* Improved choice handling
+* Added choices at the end
+
+
 5/2/14
 * Started development
 * Added main menu class

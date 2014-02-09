@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string.h>
 
 #include "MainMenu.h"
 
@@ -29,21 +30,28 @@ void MainMenu::showOptions() {
     cout << "Choice: ";
     cin >> choice;
 
-    switch (choice) {
-        case ADD:
-            mathsOp->add();
-            break;
-        case SUBTRACT:
-            mathsOp->subtract();
-            break;
-        case MULTIPLY:
-            mathsOp->multiply();
-            break;
-        case DIVIDE:
-            mathsOp->divide();
-            break;
-        default:
-            showOptions();
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        showOptions();
+    }
+
+
+    if (choice == ADD) {
+        mathsOp->add();
+    }
+
+    if (choice == SUBTRACT) {
+        mathsOp->subtract();
+    }
+
+    if (choice == MULTIPLY) {
+        mathsOp->multiply();
+    }
+
+    if (choice == DIVIDE) {
+        mathsOp->divide();
     }
 }
 
