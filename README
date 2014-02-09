@@ -1,0 +1,11 @@
+CALCULATOR
+
+A basic command line calculator written in C++.
+
+Features
+* Addition
+* Subtraction
+* Multiplication
+* Division
+* Exit support
+* Loop through operations
