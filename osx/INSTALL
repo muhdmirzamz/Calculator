@@ -1,0 +1,10 @@
+HOW TO INSTALL
+Requirements:
+Make sure you have make installed
+If you don’t, go here https://www.gnu.org/software/make/
+
+Steps:
+* Go to osx folder
+* There is a file called “makefile”
+* Open up terminal and type “make”
+* This will output an executable
