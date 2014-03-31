@@ -41,16 +41,8 @@ class MainMenu {
 		void endScreen();
 		
 	private:
-		enum MathOperations {
-			DEFAULT,
-			ADD,
-			SUBTRACT,
-			MULTIPLY,
-			DIVISION,
-			EXIT
-		};
-	
 		char _number[10];
+		char _choice[10];
 		
 		int _sum;
 		double _addFirstDouble;

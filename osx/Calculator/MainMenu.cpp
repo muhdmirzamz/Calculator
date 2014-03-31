@@ -14,6 +14,7 @@ using namespace std;
 MainMenu::MainMenu() {
 }
 
+// inline-declared function for program performance
 inline void MainMenu::showErrorMsg() {
 	cout << "Invalid input! Try again!\n";
 }
@@ -22,6 +23,8 @@ void MainMenu::showOptionsScreen() {
 	cout << "Calculator\n";
 	cout << endl;
 
+	// no need for enums
+	// difficult for error handling with int
 	cout << "1 - ADD" << endl;
 	cout << "2 - SUBTRACT" << endl;
 	cout << "3 - MULTIPLY" << endl;
@@ -32,6 +35,8 @@ void MainMenu::showOptionsScreen() {
 	
 	cin >> _number;
 	
+	// only take first element as input
+	// ignores the rest
 	if (_number[0] == '1') {
 		add();
 	} else if (_number[0] == '2') {
@@ -43,10 +48,16 @@ void MainMenu::showOptionsScreen() {
 	} else if (_number[0] == '5') {
 		cout << "Program quit!" << endl;
 	} else {
+		// only called when a different type is taken as input
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+	
+		// used by default
 		showErrorMsg();
 		showOptionsScreen();
 	}
-	
 }
 
 void MainMenu::add() {
@@ -181,6 +192,7 @@ void MainMenu::divide() {
 	_division = _divideFirstDouble / _divideSecondDouble;
 	cout << "Division: " << _division << endl;
 	
+	// type cast for remainder
 	_remainderFirstInt = (int) _divideFirstDouble;
 	_remainderSecondInt = (int) _divideSecondDouble;
 	_remainder = _remainderFirstInt % _remainderSecondInt;
@@ -194,6 +206,7 @@ void MainMenu::dividePartOne() {
 	cout << "Enter first number: ";
 	cin >> _divideFirstDouble;
 	
+	// checks for division by zero
 	if (cin.fail() || _divideFirstDouble == 0) {
 		showErrorMsg();
 		
@@ -227,26 +240,29 @@ void MainMenu::endScreen() {
 	cout << "4 - DIVISION" << endl;
 	cout << "5 - EXIT" << endl;
 	
-	int choice;
 	cout << "Your choice: ";
-	cin >> choice;
+	cin >> _choice;
 	
-	if (choice == ADD) {
+	if (_choice[0] == '1') {
 		add();
-	} else if (choice == SUBTRACT) {
+	} else if (_choice[0] == '2') {
 		subtract();
-	} else if (choice == MULTIPLY) {
+	} else if (_choice[0] == '3') {
 		multiply();
-	} else if (choice == DIVISION) {
+	} else if (_choice[0] == '4') {
 		divide();
-	} else if (choice == EXIT) {
+	} else if (_choice[0] == '5') {
 		cout << "Program quit" << endl;
 	} else {
+		// only called when a different type is taken as input
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(10000, '\n');
 		}
 		
+		// used by default
+		showErrorMsg();
+		cout << endl;
 		endScreen();
 	}
 }
