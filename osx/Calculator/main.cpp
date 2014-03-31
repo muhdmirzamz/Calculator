@@ -18,6 +18,7 @@ int main(int argc, const char * argv[])
 	MainMenu *mainMenu = new MainMenu();
 	mainMenu->showOptionsScreen();
 	
+	// free resources
 	delete mainMenu;
     return 0;
 }
