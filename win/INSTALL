@@ -1,0 +1,11 @@
+INSTALL
+
+Requirements:
+You need to have CodeBlocks installed
+If you dont, go here http://www.codeblocks.org/downloads/26
+
+1) Go to "win" project folder
+2) Go to "Calculator"
+3) Double click the "Calculator.cbp" file
+4) This opens up Codeblocks
+5) Press "F9" to run the program

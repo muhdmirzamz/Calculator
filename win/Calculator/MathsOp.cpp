@@ -18,106 +18,169 @@ MathsOp::MathsOp()
 void MathsOp::add() {
     showTitleOfMathsOp("ADD");
 
-    cout << "Enter first number: ";
-    cin >> addDoubleOne;
-    if (cin.fail()) {
-        showErrorMessage();
-        add();
-    }
+    addPartOne();
+    addPartTwo();
 
-    cout << "Enter second number: ";
-    cin >> addDoubleTwo;
-    if (cin.fail()) {
-        showErrorMessage();
-        add();
-    }
-
-    sum = addDoubleOne + addDoubleTwo;
-    cout << "Sum: " << sum << endl;
+    _sum = _addDoubleOne + _addDoubleTwo;
+    cout << "Sum: " << _sum << endl;
 
     endScreen();
+}
+
+void MathsOp::addPartOne() {
+    cout << "Enter first number: ";
+    cin >> _addDoubleOne;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        addPartOne();
+    }
+}
+
+void MathsOp::addPartTwo() {
+    cout << "Enter second number: ";
+    cin >> _addDoubleTwo;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        addPartTwo();
+    }
 }
 
 void MathsOp::subtract() {
     showTitleOfMathsOp("SUBTRACT");
 
-    cout << "Enter first number: ";
-    cin >> subtractDoubleOne;
-    if (cin.fail()) {
-        showErrorMessage();
-        subtract();
-    }
+    subtractPartOne();
+    subtractPartTwo();
 
-    cout << "Enter second number: ";
-    cin >> subtractDoubleTwo;
-    if (cin.fail()) {
-        showErrorMessage();
-        subtract();
-    }
-
-    difference = subtractDoubleOne - subtractDoubleTwo;
-    cout << "Difference: " << difference << endl;
+    _difference = _subtractDoubleOne - _subtractDoubleTwo;
+    cout << "Difference: " << _difference << endl;
 
     endScreen();
+}
+
+void MathsOp::subtractPartOne() {
+    cout << "Enter first number: ";
+    cin >> _subtractDoubleOne;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        subtractPartOne();
+    }
+}
+
+void MathsOp::subtractPartTwo() {
+    cout << "Enter second number: ";
+    cin >> _subtractDoubleTwo;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        subtractPartTwo();
+    }
 }
 
 void MathsOp::multiply() {
     showTitleOfMathsOp("MULTIPLY");
 
-    cout << "Enter first number: ";
-    cin >> multiplyDoubleOne;
-    if (cin.fail()) {
-        showErrorMessage();
-        multiply();
-    }
+    multiplyPartOne();
+    multiplyPartTwo();
 
-    cout << "Enter second number: ";
-    cin >> multiplyDoubleTwo;
-    if (cin.fail()) {
-        showErrorMessage();
-        multiply();
-    }
-
-    product = multiplyDoubleOne * multiplyDoubleTwo;
-    cout << "Product: " << product << endl;
+    _product = _multiplyDoubleOne * _multiplyDoubleTwo;
+    cout << "Product: " << _product << endl;
 
     endScreen();
+}
+
+void MathsOp::multiplyPartOne() {
+    cout << "Enter first number: ";
+    cin >> _multiplyDoubleOne;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        multiplyPartOne();
+    }
+}
+
+void MathsOp::multiplyPartTwo() {
+    cout << "Enter second number: ";
+    cin >> _multiplyDoubleTwo;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        multiplyPartTwo();
+    }
 }
 
 void MathsOp::divide() {
     showTitleOfMathsOp("DIVIDE");
 
-    cout << "Enter first number: ";
-    cin >> divideDoubleOne;
-    if (cin.fail()) {
-        showErrorMessage();
-        divide();
-    }
+    dividePartOne();
+    dividePartTwo();
 
-    cout << "Enter second number: ";
-    cin >> divideDoubleTwo;
-    if (cin.fail()) {
-        showErrorMessage();
-        divide();
-    }
-
-    division = divideDoubleOne / divideDoubleTwo;
-    cout << "Division: " << division << endl;
+    _division = _divideDoubleOne / _divideDoubleTwo;
+    cout << "Division: " << _division << endl;
 
     endScreen();
 }
 
-void MathsOp::endScreen() {
-    cout << "What do you want to do?" << endl;
+void MathsOp::dividePartOne() {
+    cout << "Enter first number: ";
+    cin >> _divideDoubleOne;
 
-    cout << "1 - ADD" << endl;
-    cout << "2 - SUBTRACT" << endl;
-    cout << "3 - MULTIPLY" << endl;
-    cout << "4 - DIVIDE" << endl;
-    cout << "5 - END" << endl;
+    // checks for division by zero too
+    if (cin.fail() || _divideDoubleOne == 0) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        dividePartOne();
+    }
+}
+
+void MathsOp::dividePartTwo() {
+    cout << "Enter second number: ";
+    cin >> _divideDoubleTwo;
+    if (cin.fail()) {
+        showErrorMessage();
+
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        dividePartTwo();
+    }
+}
+
+void MathsOp::endScreen() {
+    cout << endl;
+    cout << "What do you want to do?\n";
+
+    cout << "1 - ADD\n";
+    cout << "2 - SUBTRACT\n";
+    cout << "3 - MULTIPLY\n";
+    cout << "4 - DIVIDE\n";
+    cout << "5 - EXIT\n";
 
     cout << "Your choice: ";
-    cin >> endScreenChoice;
+    cin >> _endScreenChoice;
     if (cin.fail()) {
         cin.clear();
         cin.ignore(10000, '\n');
@@ -125,23 +188,27 @@ void MathsOp::endScreen() {
         endScreen();
     }
 
-    if (endScreenChoice == ADD) {
+    if (_endScreenChoice[0] == '1') {
         add();
-    }
-
-    if (endScreenChoice == SUBTRACT) {
+    } else if (_endScreenChoice[0] == '2') {
         subtract();
-    }
-
-    if (endScreenChoice == MULTIPLY) {
+    } else if (_endScreenChoice[0] == '3') {
         multiply();
-    }
-
-    if (endScreenChoice == DIVIDE) {
+    }else if (_endScreenChoice[0] == '4') {
         divide();
-    }
-
-    if (endScreenChoice == END) {
+    } else if (_endScreenChoice[0] == '5') {
         cout << "Program ended..." << endl;
+    } else {
+        if (cin.fail()) {
+            showErrorMessage();
+
+            cin.clear();
+            cin.ignore(10000, '\n');
+
+            endScreen();
+        }
+
+        showErrorMessage();
+        endScreen();
     }
 }

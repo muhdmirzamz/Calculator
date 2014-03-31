@@ -1,5 +1,15 @@
 CHANGELOG
 
+Mar 30 v1.1.1
+* Optimised program flow
+* Optimised program speed
+* Improved program structure
+* Looping bug fixed
+* Documentation added
+
+Mar 26 v1.0.0
+* Optimised program loop and flow
+
 Mar 2 v1.0.0
 * Added makefile for osx
 

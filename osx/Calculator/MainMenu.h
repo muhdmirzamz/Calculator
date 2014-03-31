@@ -18,17 +18,27 @@ class MainMenu {
 	public:
 		MainMenu();
 		
+		inline void showErrorMsg();
+		
 		void showOptionsScreen();
 		
 		void add();
-		void subtract();
-		void multiply();
-		void divide();
+		void addPartOne();
+		void addPartTwo();
 		
-		void addEndScreen();
-		void subtractEndScreen();
-		void multiplyEndScreen();
-		void divideEndScreen();
+		void subtract();
+		void subtractPartOne();
+		void subtractPartTwo();
+		
+		void multiply();
+		void multiplyPartOne();
+		void multiplyPartTwo();
+		
+		void divide();
+		void dividePartOne();
+		void dividePartTwo();
+		
+		void endScreen();
 		
 	private:
 		enum MathOperations {
@@ -40,26 +50,26 @@ class MainMenu {
 			EXIT
 		};
 	
-		int number;
+		char _number[10];
 		
-		int sum;
-		double addFirstDouble;
-		double addSecondDouble;
+		int _sum;
+		double _addFirstDouble;
+		double _addSecondDouble;
 		
-		int difference;
-		double subtractFirstDouble;
-		double subtractSecondDouble;
+		int _difference;
+		double _subtractFirstDouble;
+		double _subtractSecondDouble;
 		
-		int product;
-		double multiplyFirstDouble;
-		double multiplySecondDouble;
+		int _product;
+		double _multiplyFirstDouble;
+		double _multiplySecondDouble;
 		
-		double division;
-		double divideFirstDouble;
-		double divideSecondDouble;
-		int remainder;
-		int remainderFirstInt;
-		int remainderSecondInt;
+		double _division;
+		double _divideFirstDouble;
+		double _divideSecondDouble;
+		int _remainder;
+		int _remainderFirstInt;
+		int _remainderSecondInt;
 };
 
 #endif /* defined(__Calculator__MainMenu__) */

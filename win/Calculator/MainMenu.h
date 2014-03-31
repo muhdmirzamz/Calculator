@@ -17,20 +17,19 @@ class MainMenu
 {
     public:
         MainMenu();
+        // to free resources
         ~MainMenu();
 
         void showOptions();
 
-    private:
-        enum MathsArithmetics {
-            ZERO,
-            ADD,
-            SUBTRACT,
-            MULTIPLY,
-            DIVIDE
-        };
+        // inline-declared makes it easy to show the error message
+        // without typing it everytime
+        // improves app performance
+        inline void showErrorMsg();
 
-        int choice;
+    private:
+        // really unsure if there's a vuln here?
+        char _choice[10];
         MathsOp *mathsOp;
 };
 
