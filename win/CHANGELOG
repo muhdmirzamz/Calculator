@@ -1,6 +1,13 @@
 CHANGELOG
 
-v1.0.0 8/2/14
+31/3/14 v1.1.1
+* Skipped a version number which is a full port of windows
+   this version is also a full port of windows
+* Improved program performance
+* Improved program loop
+* Fixed bug that caused program to crash
+
+8/2/14 v1.0.0
 * Added full math classes
 * Improved choice handling
 * Added choices at the end

@@ -13,9 +13,13 @@ using namespace std;
 
 int main()
 {
+    // this outputs the title of the app
+    // and initialises the MathsOp pointer declared privately
+    // an example of multitasking for the programmer
     MainMenu *mainMenu = new MainMenu();
     mainMenu->showOptions();
 
+    // free resources allocated dynamically
     delete mainMenu;
     return 0;
 }
