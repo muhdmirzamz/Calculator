@@ -1,6 +1,6 @@
 CXX=g++
 CFLAGS=-c -g -Wall 
-LFLAGS=-Wall -o
+LFLAGS=-Wall -std=c++11  -o
 VPATH=Calculator
 
 CalculatorApp: main.o MainMenu.o
@@ -13,5 +13,5 @@ main.o: main.cpp
 	$(CXX) $(CFLAGS) $^	
 
 clean:
-	rm -rf *.o
+	rm -rf *.o CalculatorApp
 

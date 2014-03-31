@@ -14,10 +14,12 @@ using namespace std;
 MainMenu::MainMenu() {
 }
 
+inline void MainMenu::showErrorMsg() {
+	cout << "Invalid input! Try again!\n";
+}
+
 void MainMenu::showOptionsScreen() {
-	cout << "Calculator v1.0.0" << endl;
-	
-	cout << endl;
+	cout << "Calculator\n";
 	cout << endl;
 
 	cout << "1 - ADD" << endl;
@@ -28,165 +30,198 @@ void MainMenu::showOptionsScreen() {
 	
 	cout << "Choose a number: ";
 	
-	cin >> number;
+	cin >> _number;
 	
-	if (number == ADD) {
+	if (_number[0] == '1') {
 		add();
-	} else if (number == SUBTRACT) {
+	} else if (_number[0] == '2') {
 		subtract();
-	} else if (number == MULTIPLY) {
+	} else if (_number[0] == '3') {
 		multiply();
-	} else if (number == DIVISION) {
+	} else if (_number[0] == '4') {
 		divide();
-	} else if (number == EXIT) {
+	} else if (_number[0] == '5') {
 		cout << "Program quit!" << endl;
 	} else {
-		if (cin.fail()) {
-			cin.clear();
-			cin.ignore(10000, '\n');
-		}
+		showErrorMsg();
+		showOptionsScreen();
 	}
 	
 }
 
 void MainMenu::add() {
-	cout << "Testing" << endl;
+	cout << "ADD\n";
+	
+	addPartOne();
+	addPartTwo();
+	
+	_sum = _addFirstDouble + _addSecondDouble;
+	cout << "Sum: " << _sum << endl;
+	
+	cout << endl;
+	endScreen();
+}
+
+void MainMenu::addPartOne() {
 	cout << "Enter first number: ";
-	cin >> addFirstDouble;
+	cin >> _addFirstDouble;
 	
 	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-	
-		cin.clear();
-		cin.ignore(10000, '\n');
-		add();
-	}
-	
-	cout << "Enter second number: ";
-	cin >> addSecondDouble;
-	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
+		showErrorMsg();
 		
 		cin.clear();
 		cin.ignore(10000, '\n');
-		add();
+		
+		addPartOne();
 	}
+}
+
+void MainMenu::addPartTwo() {
+	cout << "Enter second number: ";
+	cin >> _addSecondDouble;
 	
-	sum = addFirstDouble + addSecondDouble;
-	cout << "Sum: " << sum << endl;
-	
-	cout << endl;
-	addEndScreen();
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		addPartTwo();
+	}
 }
 
 void MainMenu::subtract() {
-	cout << "Enter first number: ";
-	cin >> subtractFirstDouble;
+	cout << "SUBTRACT\n";
 	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		subtract();
-	}
+	subtractPartOne();
+	subtractPartTwo();
 	
-	cout << "Enter second number: ";
-	cin >> subtractSecondDouble;
-	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		subtract();
-	}
-	
-	difference = subtractFirstDouble - subtractSecondDouble;
-	cout << "Difference: " << difference << endl;
+	_difference = _subtractFirstDouble - _subtractSecondDouble;
+	cout << "Difference: " << _difference << endl;
 	
 	cout << endl;
-	subtractEndScreen();
+	endScreen();
+}
+
+void MainMenu::subtractPartOne() {
+	cout << "Enter first number: ";
+	cin >> _subtractFirstDouble;
+	
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		subtractPartOne();
+	}
+}
+
+void MainMenu::subtractPartTwo() {
+	cout << "Enter second number: ";
+	cin >> _subtractSecondDouble;
+	
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		subtractPartTwo();
+	}
 }
 
 void MainMenu::multiply() {
-	cout << "Enter first number: ";
-	cin >> multiplyFirstDouble;
+	cout << "MULTIPLY\n";
 	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		multiply();
-	}
+	multiplyPartOne();
+	multiplyPartTwo();
 	
-	cout << "Enter second number: ";
-	cin >> multiplySecondDouble;
-	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		multiply();
-	}
-	
-	product = multiplyFirstDouble * multiplySecondDouble;
-	cout << "Product: " << product << endl;
+	_product = _multiplyFirstDouble * _multiplySecondDouble;
+	cout << "Product: " << _product << endl;
 	
 	cout << endl;
-	multiplyEndScreen();
+	endScreen();
+}
+
+void MainMenu::multiplyPartOne() {
+	cout << "Enter first number: ";
+	cin >> _multiplyFirstDouble;
+	
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		multiplyPartOne();
+	}
+}
+
+void MainMenu::multiplyPartTwo() {
+	cout << "Enter second number: ";
+	cin >> _multiplySecondDouble;
+	
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		multiplyPartTwo();
+	}
 }
 
 void MainMenu::divide() {
-	cout << "Enter first number: ";
-	cin >> divideFirstDouble;
+	cout << "DIVIDE\n";
 	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		divide();
-	}
-	
-	if (divideFirstDouble == 0) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		divide();
-	}
-	
-	cout << "Enter second number: ";
-	cin >> divideSecondDouble;
-	
-	if (cin.fail()) {
-		cout << "Invalid input! Try again!" << endl;
-		
-		cin.clear();
-		cin.ignore(10000, '\n');
-		divide();
-	}
+	dividePartOne();
+	dividePartTwo();
 
-	division = divideFirstDouble / divideSecondDouble;
-	cout << "Division: " << division << endl;
+	_division = _divideFirstDouble / _divideSecondDouble;
+	cout << "Division: " << _division << endl;
 	
-	remainderFirstInt = (int) divideFirstDouble;
-	remainderSecondInt = (int) divideSecondDouble;
-	remainder = remainderFirstInt % remainderSecondInt;
-	cout << "Remainder: " << remainder << endl;
+	_remainderFirstInt = (int) _divideFirstDouble;
+	_remainderSecondInt = (int) _divideSecondDouble;
+	_remainder = _remainderFirstInt % _remainderSecondInt;
+	cout << "Remainder: " << _remainder << endl;
 	
 	cout << endl;
-	divideEndScreen();
+	endScreen();
 }
 
-void MainMenu::addEndScreen() {
+void MainMenu::dividePartOne() {
+	cout << "Enter first number: ";
+	cin >> _divideFirstDouble;
+	
+	if (cin.fail() || _divideFirstDouble == 0) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		dividePartOne();
+	}
+}
+
+void MainMenu::dividePartTwo() {
+	cout << "Enter second number: ";
+	cin >> _divideSecondDouble;
+	
+	if (cin.fail()) {
+		showErrorMsg();
+		
+		cin.clear();
+		cin.ignore(10000, '\n');
+		
+		dividePartTwo();
+	}
+}
+
+void MainMenu::endScreen() {
 	cout << "You can: " << endl;
 	
-	cout << "1 - TRY AGAIN" << endl;
+	cout << "1 - ADD" << endl;
 	cout << "2 - SUBTRACT" << endl;
 	cout << "3 - MULTIPLY" << endl;
 	cout << "4 - DIVISION" << endl;
@@ -207,90 +242,11 @@ void MainMenu::addEndScreen() {
 	} else if (choice == EXIT) {
 		cout << "Program quit" << endl;
 	} else {
-		addEndScreen();
-	}
-}
-
-void MainMenu::subtractEndScreen() {
-	cout << "You can: " << endl;
-	
-	cout << "1 - ADD" << endl;
-	cout << "2 - TRY AGAIN" << endl;
-	cout << "3 - MULTIPLY" << endl;
-	cout << "4 - DIVISION" << endl;
-	cout << "5 - EXIT" << endl;
-	
-	int choice;
-	cout << "Your choice: ";
-	cin >> choice;
-	
-	if (choice == ADD) {
-		add();
-	} else if (choice == SUBTRACT) {
-		subtract();
-	} else if (choice == MULTIPLY) {
-		multiply();
-	} else if (choice == DIVISION) {
-		divide();
-	} else if (choice == EXIT) {
-		cout << "Program quit" << endl;
-	} else {
-		subtractEndScreen();
-	}
-}
-
-void MainMenu::multiplyEndScreen() {
-	cout << "You can: " << endl;
-	
-	cout << "1 - ADD" << endl;
-	cout << "2 - SUBTRACT" << endl;
-	cout << "3 - TRY AGAIN" << endl;
-	cout << "4 - DIVISION" << endl;
-	cout << "5 - EXIT" << endl;
-	
-	int choice;
-	cout << "Your choice: ";
-	cin >> choice;
-	
-	if (choice == ADD) {
-		add();
-	} else if (choice == SUBTRACT) {
-		subtract();
-	} else if (choice == MULTIPLY) {
-		multiply();
-	} else if (choice == DIVISION) {
-		divide();
-	} else if (choice == EXIT) {
-		cout << "Program quit" << endl;
-	} else {
-		multiplyEndScreen();
-	}
-}
-
-void MainMenu::divideEndScreen() {
-	cout << "You can: " << endl;
-	
-	cout << "1 - ADD" << endl;
-	cout << "2 - SUBTRACT" << endl;
-	cout << "3 - MULTIPLY" << endl;
-	cout << "4 - TRY AGAIN" << endl;
-	cout << "5 - EXIT" << endl;
-	
-	int choice;
-	cout << "Your choice: ";
-	cin >> choice;
-	
-	if (choice == ADD) {
-		add();
-	} else if (choice == SUBTRACT) {
-		subtract();
-	} else if (choice == MULTIPLY) {
-		multiply();
-	} else if (choice == DIVISION) {
-		divide();
-	} else if (choice == EXIT) {
-		cout << "Program quit" << endl;
-	} else {
-		divideEndScreen();
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+		
+		endScreen();
 	}
 }
