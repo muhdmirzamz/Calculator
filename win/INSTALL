@@ -9,3 +9,10 @@ If you dont, go here http://www.codeblocks.org/downloads/26
 3) Double click the "Calculator.cbp" file
 4) This opens up Codeblocks
 5) Press "F9" to run the program
+
+If you have the Make utility installed,
+1) Go to the win folder
+2) You'll see a makefile 
+3) Get on any unix-like terminal(You can use cygwin)
+4) Type in 'make'
+5) The program should compile and output an executable
